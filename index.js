@@ -62,5 +62,4 @@ module.exports = function getElementsKind(inputArray) {
   return kind;
 };
 
-let a = new Array(21);
-console.log(getElementsKind(a));
+module.exports.ELEMENTS_KINDS = ELEMENTS_KINDS;

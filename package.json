@@ -4,7 +4,7 @@
   "description": "check the elements kinds in v8",
   "main": "index.js",
   "scripts": {
-    "test": ""
+    "test": "mocha test/*.js"
   },
   "keywords": [
     "elements",
@@ -12,5 +12,8 @@
     "v8"
   ],
   "author": "Vignesh Shanmugam <vignesh.shanmugam22@gmail.com> (https://vigneshh.in)",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "mocha": "^5.0.4"
+  }
 }
