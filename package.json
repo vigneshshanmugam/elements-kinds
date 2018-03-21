@@ -1,0 +1,16 @@
+{
+  "name": "elements-kinds",
+  "version": "0.0.0",
+  "description": "check the elements kinds in v8",
+  "main": "index.js",
+  "scripts": {
+    "test": ""
+  },
+  "keywords": [
+    "elements",
+    "kinds",
+    "v8"
+  ],
+  "author": "Vignesh Shanmugam <vignesh.shanmugam22@gmail.com> (https://vigneshh.in)",
+  "license": "MIT"
+}
