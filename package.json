@@ -1,7 +1,7 @@
 {
   "name": "elements-kinds",
-  "version": "0.0.0",
-  "description": "check the elements kinds in v8",
+  "version": "0.0.1",
+  "description": "JS helper function to debug elements kinds in v8",
   "main": "index.js",
   "scripts": {
     "test": "mocha test/*.js"
@@ -15,5 +15,10 @@
   "license": "MIT",
   "devDependencies": {
     "mocha": "^5.0.4"
-  }
+  },
+  "files": [
+    "index.js",
+    "LICENSE",
+    "README.md"
+  ]
 }

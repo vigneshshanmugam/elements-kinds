@@ -1,0 +1,10 @@
+sudo: false
+language: node_js
+node_js:
+- 8.9.0
+- 9.5.0
+cache:
+  directories:
+  - node_modules
+script:
+- yarn run test

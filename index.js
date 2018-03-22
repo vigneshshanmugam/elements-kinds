@@ -31,7 +31,7 @@ function containsHoles(arr) {
   return false;
 }
 
-module.exports = function getElementsKind(inputArray) {
+module.exports = function getElementsKinds(inputArray) {
   if (!Array.isArray(inputArray)) {
     throw new Erorr("Input param must be array");
   }
