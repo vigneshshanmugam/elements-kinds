@@ -3,16 +3,16 @@ const getElementsKinds = require("../");
 const { ELEMENTS_KINDS } = require("../");
 
 describe("Elements Kinds", () => {
-  it("Unitialized array must be holey smi elements", () => {
-    assert.equal(
-      getElementsKinds(new Array(2)),
-      ELEMENTS_KINDS.HOLEY_SMI_ELEMENTS
-    );
-  });
-
   it("holey smi elements", () => {
     assert.equal(
       getElementsKinds([1, 2, , 3]),
+      ELEMENTS_KINDS.HOLEY_SMI_ELEMENTS
+    );
+    var a = [];
+    a[312] = 1;
+    assert.equal(getElementsKinds(a), ELEMENTS_KINDS.HOLEY_SMI_ELEMENTS);
+    assert.equal(
+      getElementsKinds(new Array(2)),
       ELEMENTS_KINDS.HOLEY_SMI_ELEMENTS
     );
   });
@@ -32,8 +32,10 @@ describe("Elements Kinds", () => {
   });
 
   it("packed small integers", () => {
-    const arr = [1, 2, 3, 4];
-    assert.equal(getElementsKinds(arr), ELEMENTS_KINDS.PACKED_SMI_ELEMENTS);
+    assert.equal(
+      getElementsKinds([1, 2, 3, 4]),
+      ELEMENTS_KINDS.PACKED_SMI_ELEMENTS
+    );
   });
 
   it("packed double elements", () => {
@@ -46,5 +48,9 @@ describe("Elements Kinds", () => {
     const arr = [1, 2, 3];
     arr.push("1");
     assert.equal(getElementsKinds(arr), ELEMENTS_KINDS.PACKED_ELEMENTS);
+    assert.equal(
+      getElementsKinds([undefined, undefined]),
+      ELEMENTS_KINDS.PACKED_ELEMENTS
+    );
   });
 });
