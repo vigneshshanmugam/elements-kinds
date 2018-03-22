@@ -22,13 +22,17 @@ function isDouble(arr) {
   // );
 }
 
+/**
+ * can also use Object.prototype.hasOwnProperty as suggested here
+ * https://github.com/vigneshshanmugam/elements-kinds/issues/2
+ */
 function containsHoles(arr) {
-  for (const ele of arr) {
-    if (typeof ele === "undefined") {
-      return true;
-    }
+  let actual = arr.length;
+  let found = 0;
+  for (var i in arr) {
+    found++;
   }
-  return false;
+  return actual !== found;
 }
 
 module.exports = function getElementsKinds(inputArray) {
